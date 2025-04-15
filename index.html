@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Get the latest world, tech, and economics news. Updated hourly.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalNewsNow</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1>GlobalNewsNow</h1>
+        <p>Your source for the latest World, Tech, and Economics news — 100% AI-curated.</p>
+    </header>
+
+    <main>
+        {% for article in articles %}
+            <article>
+                <h2><a href="/article/{{ article.file.split('.')[0] }}">{{ article.title }}</a></h2>
+                <p><strong>Category:</strong> {{ article.category.capitalize() }}</p>
+            </article>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <p>© {{ now().year }} GlobalNewsNow. Updated hourly with the power of AI.</p>
+    </footer>
+</body>
+</html>

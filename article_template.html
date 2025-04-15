@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="category" content="{{ category }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ title }} - GlobalNewsNow">
+    <title>{{ title }} | GlobalNewsNow</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+        <p><em>Published: {{ pub_date }} | Source: {{ source }}</em></p>
+    </header>
+
+    {% if image %}
+        <img src="{{ image }}" alt="News Image" style="max-width:100%; height:auto;">
+    {% endif %}
+
+    <main>
+        <p>{{ content|safe }}</p>
+    </main>
+
+    <footer>
+        <p><a href="/">← Back to Home</a></p>
+        <p>© {{ pub_date.split('-')[0] }} GlobalNewsNow. All content rewritten by AI using OpenAI.</p>
+    </footer>
+</body>
+</html>
