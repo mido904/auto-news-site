@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Aggregator</title>
+</head>
+<body>
+    <h1>Latest News</h1>
+    {% for article in articles %}
+        <div style="margin-bottom: 20px;">
+            <h2>{{ article['title'] }}</h2>
+            <p>{{ article['description'] }}</p>
+            <a href="{{ article['url'] }}" target="_blank">Read more</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
